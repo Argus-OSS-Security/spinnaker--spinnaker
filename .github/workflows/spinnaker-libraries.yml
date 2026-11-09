@@ -1,21 +1,22 @@
 name: Spinnaker Libraries
 run-name: Libraries ${{ github.ref_name }}
 
-on:
-  workflow_call:
-    inputs:
-      version-override:
-        description: The release version to publish (e.g. "2026.3.2").
-        type: string
-        required: true
-
-  workflow_dispatch:
-    inputs:
-      version-override:
-        description: The release version to publish (e.g. "2026.3.2").
-        type: string
-        required: true
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       version-override:
+#         description: The release version to publish (e.g. "2026.3.2").
+#         type: string
+#         required: true
+# 
+#   workflow_dispatch:
+#     inputs:
+#       version-override:
+#         description: The release version to publish (e.g. "2026.3.2").
+#         type: string
+#         required: true
+# 
 jobs:
   libraries-nexus:
     runs-on: ubuntu-latest

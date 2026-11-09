@@ -1,75 +1,76 @@
 name: Spinnaker BoM/Changelog/Github Release
 run-name: Spinnaker BoM/Changelog/Github (${{ inputs.spinnaker-version }})
 
-on:
-  workflow_call:
-    inputs:
-      add-to-versions-yml:
-        description: Add this version to `versions.yml` for Halyard?
-        type: boolean
-        default: true
-      spinnaker-version:
-        description: The Spinnaker version to publish a BoM/changelog for
-        type: string
-        required: true
-      spinnaker-previous-version:
-        description: Override the previous version used for changelog generation (picks the last patch version if unset)
-        type: string
-      publish-bom:
-        description: Publish BoM?
-        type: boolean
-        default: true
-      publish-changelog:
-        description: Publish changelog?
-        type: boolean
-        default: true
-      publish-github-release:
-        description: Publish Github release?
-        type: boolean
-        default: true
-      allow-bom-overwrite:
-        description: Allow BoM overwrite if it already exists?
-        type: boolean
-        default: false
-      publish-api-docs:
-        description: Publish Gate's OpenAPI spec to the docs site?
-        type: boolean
-        default: true
-
-  workflow_dispatch:
-    inputs:
-      add-to-versions-yml:
-        description: Add this version to `versions.yml` for Halyard?
-        type: boolean
-        default: true
-      spinnaker-version:
-        description: The Spinnaker version to publish a BoM/changelog for
-        type: string
-        required: true
-      spinnaker-previous-version:
-        description: Override the previous version used for changelog generation (picks the last patch version if unset)
-        type: string
-      publish-bom:
-        description: Publish BoM?
-        type: boolean
-        default: true
-      publish-changelog:
-        description: Publish changelog?
-        type: boolean
-        default: true
-      publish-github-release:
-        description: Publish Github release?
-        type: boolean
-        default: true
-      allow-bom-overwrite:
-        description: Allow BoM overwrite if it already exists?
-        type: boolean
-        default: false
-      publish-api-docs:
-        description: Publish Gate's OpenAPI spec to the docs site?
-        type: boolean
-        default: true
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       add-to-versions-yml:
+#         description: Add this version to `versions.yml` for Halyard?
+#         type: boolean
+#         default: true
+#       spinnaker-version:
+#         description: The Spinnaker version to publish a BoM/changelog for
+#         type: string
+#         required: true
+#       spinnaker-previous-version:
+#         description: Override the previous version used for changelog generation (picks the last patch version if unset)
+#         type: string
+#       publish-bom:
+#         description: Publish BoM?
+#         type: boolean
+#         default: true
+#       publish-changelog:
+#         description: Publish changelog?
+#         type: boolean
+#         default: true
+#       publish-github-release:
+#         description: Publish Github release?
+#         type: boolean
+#         default: true
+#       allow-bom-overwrite:
+#         description: Allow BoM overwrite if it already exists?
+#         type: boolean
+#         default: false
+#       publish-api-docs:
+#         description: Publish Gate's OpenAPI spec to the docs site?
+#         type: boolean
+#         default: true
+# 
+#   workflow_dispatch:
+#     inputs:
+#       add-to-versions-yml:
+#         description: Add this version to `versions.yml` for Halyard?
+#         type: boolean
+#         default: true
+#       spinnaker-version:
+#         description: The Spinnaker version to publish a BoM/changelog for
+#         type: string
+#         required: true
+#       spinnaker-previous-version:
+#         description: Override the previous version used for changelog generation (picks the last patch version if unset)
+#         type: string
+#       publish-bom:
+#         description: Publish BoM?
+#         type: boolean
+#         default: true
+#       publish-changelog:
+#         description: Publish changelog?
+#         type: boolean
+#         default: true
+#       publish-github-release:
+#         description: Publish Github release?
+#         type: boolean
+#         default: true
+#       allow-bom-overwrite:
+#         description: Allow BoM overwrite if it already exists?
+#         type: boolean
+#         default: false
+#       publish-api-docs:
+#         description: Publish Gate's OpenAPI spec to the docs site?
+#         type: boolean
+#         default: true
+# 
 jobs:
   check-preconditions:
     runs-on: ubuntu-latest

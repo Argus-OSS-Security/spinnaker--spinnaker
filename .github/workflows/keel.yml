@@ -1,55 +1,56 @@
 name: Keel
 run-name: Keel ${{ github.ref_name }} (${{ github.event_name }})
 
-on:
-  workflow_call:
-    inputs:
-      publish-containers:
-        description: Publish containers
-        type: boolean
-        default: true
-      publish-debs:
-        description: Publish debs
-        type: boolean
-        default: false
-      version-override:
-        description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
-        type: string
-
-  workflow_dispatch:
-    inputs:
-      publish-containers:
-        description: Publish containers
-        type: boolean
-        default: true
-      publish-debs:
-        description: Publish debs
-        type: boolean
-        default: false
-      version-override:
-        description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
-        type: string
-
-  push:
-    branches:
-      - main
-      - release-*
-    paths:
-      - 'keel/**'
-      - 'fiat/**'
-      - 'kork/**'
-      - '.github/workflows/keel.yml'
-
-  pull_request:
-    branches:
-      - main
-      - release-*
-    paths:
-      - 'keel/**'
-      - 'fiat/**'
-      - 'kork/**'
-      - '.github/workflows/keel.yml'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       publish-containers:
+#         description: Publish containers
+#         type: boolean
+#         default: true
+#       publish-debs:
+#         description: Publish debs
+#         type: boolean
+#         default: false
+#       version-override:
+#         description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
+#         type: string
+# 
+#   workflow_dispatch:
+#     inputs:
+#       publish-containers:
+#         description: Publish containers
+#         type: boolean
+#         default: true
+#       publish-debs:
+#         description: Publish debs
+#         type: boolean
+#         default: false
+#       version-override:
+#         description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
+#         type: string
+# 
+#   push:
+#     branches:
+#       - main
+#       - release-*
+#     paths:
+#       - 'keel/**'
+#       - 'fiat/**'
+#       - 'kork/**'
+#       - '.github/workflows/keel.yml'
+# 
+#   pull_request:
+#     branches:
+#       - main
+#       - release-*
+#     paths:
+#       - 'keel/**'
+#       - 'fiat/**'
+#       - 'kork/**'
+#       - '.github/workflows/keel.yml'
+# 
 permissions:
   id-token: write
   contents: write

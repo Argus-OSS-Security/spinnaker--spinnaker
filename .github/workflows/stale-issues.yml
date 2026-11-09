@@ -1,8 +1,9 @@
 name: Mark and Close Stale Issues
 
-on:
-  schedule:
-  - cron: 0 */12 * * * # Every 12 hours
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#   - cron: 0 */12 * * * # Every 12 hours
 permissions:
   actions: write
   contents: write # only for delete-branch option

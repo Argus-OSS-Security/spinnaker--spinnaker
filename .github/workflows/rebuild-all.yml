@@ -5,10 +5,11 @@ run-name: ${{ github.event_name == 'workflow_dispatch' && format('Manual Rebuild
 # This makes new release branches difficult, as we need an initial build
 # So, we use this to check `create` events, and see if we should run everything
 # https://github.com/orgs/community/discussions/26286#discussioncomment-3251208
-on:
-  create:
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   create:
+#   workflow_dispatch:
+# 
 jobs:
   # There's also no way to apply a condition to all jobs in a workflow, so we end up with this beautiful disaster
   clouddriver:

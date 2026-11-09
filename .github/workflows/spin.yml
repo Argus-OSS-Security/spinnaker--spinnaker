@@ -1,35 +1,36 @@
 name: Spin CLI
 run-name: Spin CLI ${{ github.ref_name }} (${{ github.event_name }})
 
-on:
-  workflow_call:
-    inputs:
-      version-override:
-        description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
-        type: string
-
-  workflow_dispatch:
-    inputs:
-      version-override:
-        description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
-        type: string
-
-  push:
-    branches:
-      - main
-      - release-*
-    paths:
-      - 'spin/**'
-      - '.github/workflows/spin.yml'
-
-  pull_request:
-    branches:
-      - main
-      - release-*
-    paths:
-      - 'spin/**'
-      - '.github/workflows/spin.yml'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       version-override:
+#         description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
+#         type: string
+# 
+#   workflow_dispatch:
+#     inputs:
+#       version-override:
+#         description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
+#         type: string
+# 
+#   push:
+#     branches:
+#       - main
+#       - release-*
+#     paths:
+#       - 'spin/**'
+#       - '.github/workflows/spin.yml'
+# 
+#   pull_request:
+#     branches:
+#       - main
+#       - release-*
+#     paths:
+#       - 'spin/**'
+#       - '.github/workflows/spin.yml'
+# 
 env:
   REGISTRY_REGION: ghcr.io/spinnaker
   CONTAINER_REGISTRY: ghcr.io/spinnaker

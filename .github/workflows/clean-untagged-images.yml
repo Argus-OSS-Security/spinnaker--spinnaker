@@ -1,16 +1,17 @@
 # .github/workflows/gcr-cleaner.yml
 name: 'gcr-cleaner'
 
-on:
-  schedule:
-    - cron: '0 0 */1 * *' # runs daily
-  workflow_dispatch: # allows for manual invocation
-    inputs:
-      dry-run:
-        description: 'Preview deletions without actually deleting images'
-        type: boolean
-        default: true
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   schedule:
+#     - cron: '0 0 */1 * *' # runs daily
+#   workflow_dispatch: # allows for manual invocation
+#     inputs:
+#       dry-run:
+#         description: 'Preview deletions without actually deleting images'
+#         type: boolean
+#         default: true
+# 
 jobs:
   ghcr-cleaner:
     runs-on: 'ubuntu-latest'

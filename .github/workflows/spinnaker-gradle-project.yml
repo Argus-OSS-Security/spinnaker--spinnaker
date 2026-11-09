@@ -1,24 +1,25 @@
 name: Spinnaker Gradle Project
 
-on:
-  workflow_call:
-    inputs:
-      version-override:
-        description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
-        type: string
-
-  workflow_dispatch:
-    inputs:
-      version-override:
-        description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
-        type: string
-
-  push:
-    branches:
-      - main
-    paths:
-      - 'spinnaker-gradle-project/**'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       version-override:
+#         description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
+#         type: string
+# 
+#   workflow_dispatch:
+#     inputs:
+#       version-override:
+#         description: Overrides the version for artifacts (e.g. "1.37.1").  Otherwise, uses the auto-incrementing build number for the current branch.
+#         type: string
+# 
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'spinnaker-gradle-project/**'
+# 
 env:
   GRADLE_OPTS: -Dorg.gradle.daemon=false -Xmx2g -Xms2g
 

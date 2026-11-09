@@ -1,25 +1,26 @@
 name: Clouddriver Integration Tests
 
-on:
-  workflow_dispatch:
-
-  push:
-    branches:
-      - main
-      - release-*
-    paths:
-      - 'clouddriver/**'
-      - 'fiat/**'
-      - 'kork/**'
-      - '.github/workflows/clouddriver-integration-tests.yml'
-
-  pull_request:
-    paths:
-      - 'clouddriver/**'
-      - 'fiat/**'
-      - 'kork/**'
-      - '.github/workflows/clouddriver-integration-tests.yml'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+# 
+#   push:
+#     branches:
+#       - main
+#       - release-*
+#     paths:
+#       - 'clouddriver/**'
+#       - 'fiat/**'
+#       - 'kork/**'
+#       - '.github/workflows/clouddriver-integration-tests.yml'
+# 
+#   pull_request:
+#     paths:
+#       - 'clouddriver/**'
+#       - 'fiat/**'
+#       - 'kork/**'
+#       - '.github/workflows/clouddriver-integration-tests.yml'
+# 
 env:
   GRADLE_OPTS: -Dorg.gradle.daemon=false -Xmx10g -Xms10g
 
